@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Genre-based Story Generator</title>
+</head>
+<body>
+    <h1>Genre-based Story Generator</h1>
+
+    <form action="{{ url_for('generate_story') }}" method="post">
+        <label for="genre">Select Genre:</label>
+        <select name="genre" id="genre">
+            <option value="superhero">Superhero</option>
+            <option value="sci_fi">Sci-Fi</option>
+            <option value="horror">Horror</option>
+            <option value="action">Action</option>
+            <option value="thriller">Thriller</option>
+            <option value="drama">Drama</option>
+        </select>
+
+        <label for="prompt">Enter Prompt:</label>
+        <textarea name="prompt" id="prompt" rows="4" placeholder="Batman was hunting down"></textarea>
+
+        <label for="story_length">Select Story Length:</label>
+        <input type="range" name="story_length" id="story_length" min="1" max="200" value="75">
+        <output for="story_length">75</output>
+
+        <button type="submit">Generate Story</button>
+    </form>
+
+    {% if generated_story %}
+        <div class="generated-story">
+            <h2>Story Generated:</h2>
+            <p>{{ generated_story }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
