@@ -1,82 +1,53 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 30px;
-    background-color: #1c1c1e;
-    color: #d1d1d1;
+    background: linear-gradient(to right, #3498db, #2ecc71); /* Blue to green gradient background */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding for content */
+    margin: 0; /* Remove default margin */
 }
 
 h1 {
-    color: #007aff;
-    text-align: center;
+    color: #fff; /* Header text color */
 }
 
+/* Style the form elements */
 form {
-    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     padding: 20px;
-    background-color: #2c2c2e;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #d1d1d1;
-}
-
-select, textarea, input[type="range"], button {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1px solid #4c4c4e;
-    border-radius: 8px;
-    box-sizing: border-box;
-    background-color: #2c2c2e;
-    color: #d1d1d1;
-}
-
-select {
-    appearance: none;
-}
-
+/* Style the range slider */
 input[type="range"] {
-    appearance: none;
-    height: 8px;
-    background-color: #4c4c4e;
+    background: linear-gradient(to right, #3498db, #2ecc71); /* Blue to green gradient for the slider track */
+    border: none;
+    height: 3px; /* Set the height of the slider */
+    border-radius: 5px;
     outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: #007aff;
+    background: #fff; /* Color of the slider thumb */
+    border: 2px solid #3498db; /* Border color */
+    height: 20px; /* Height of the thumb */
+    width: 20px; /* Width of the thumb */
+    border-radius: 50%; /* Make it a circle */
     cursor: pointer;
+    margin-top: -8px; /* Adjust the position */
 }
 
-output {
-    display: block;
-    text-align: center;
-    font-style: italic;
-    color: #a1a1a1;
-    margin-top: 10px;
+/* Button style */
+.btn-success {
+    background-color: #2ecc71; /* Green */
+    border-color: #2ecc71; /* Green */
 }
 
-button {
-    background-color: #007aff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
+/* Generated story style */
 .generated-story {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #2c2c2e;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
 }
