@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Genre-based Story Generator</title>
+    <!-- Add this script inside the head tag to update the slider value dynamically -->
 </head>
 <body>
-    <h1>Genre-based Story Generator</h1>
+    <div class="title-bar">
+        <h1>Genre-based Story Generator</h1>
+    </div>
+
+    <nav>
+        {% if current_user.is_authenticated %}
+            <p>Welcome, {{ current_user.username }}! <a href="{{ url_for('logout') }}">Logout</a></p>
+        {% else %}
+            <p><a href="{{ url_for('login') }}">Login</a> | <a href="{{ url_for('register') }}">Register</a></p>
+        {% endif %}
+    </nav>
 
     <form action="{{ url_for('generate_story') }}" method="post">
         <label for="genre">Select Genre:</label>
@@ -24,8 +35,8 @@
         <textarea name="prompt" id="prompt" rows="4" placeholder="Batman was hunting down"></textarea>
 
         <label for="story_length">Select Story Length:</label>
-        <input type="range" name="story_length" id="story_length" min="1" max="200" value="75">
-        <output for="story_length">75</output>
+        <input type="range" name="story_length" id="story_length" min="1" max="200" value="75" oninput="updateSliderValue(this.value)">
+        <output for="story_length" id="story_length_value">75</output>
 
         <button type="submit">Generate Story</button>
     </form>
@@ -36,5 +47,10 @@
             <p>{{ generated_story }}</p>
         </div>
     {% endif %}
+    <script>
+        function updateSliderValue(value) {
+            document.getElementById('story_length_value').innerText = value;
+        }
+    </script>
 </body>
 </html>
