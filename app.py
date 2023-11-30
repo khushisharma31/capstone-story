@@ -24,4 +24,4 @@ def generate_story_text(genre, prompt, story_length):
     return story[0]["generated_text"]
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
